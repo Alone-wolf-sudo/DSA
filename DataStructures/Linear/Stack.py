@@ -15,25 +15,35 @@ def is_empty(stack):
 def push(stack, element):
     stack.append(element)
     print("pushed element to stack")
+    # return stack
 
-def pop(stack, element):
+def pop(stack):
     if is_empty(stack):
         print("Stack is empty")
     else:
-        stack.pop(element)
+        stack.pop()
         print("popped element from stack")
 
 def peek(stack):
     if is_empty(stack):
         print("stack is empty")
     else:
-        print(stack[-1])
+        print("Top element is",stack[-1])
+
+def print_stack(stack):
+    print("stack elements are ",stack)
 
 
 if __name__ == "__main__":
     # Creating a stack
     stack = create_stack()
     # Push elements
-    stack = push(stack, 10)
+    push(stack, 10)
+    push(stack, 11)
+    push(stack, 12)
     # Pop elements
+    pop(stack)
     # peek elements
+    peek(stack)
+    # print elements
+    print_stack(stack)
